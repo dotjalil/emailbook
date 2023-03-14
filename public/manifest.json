@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "EmailBox",
+  "name": "An easy to use and free tool to organize and keep emails",
   "icons": [
     {
       "src": "favicon.ico",
