@@ -1,24 +1,25 @@
 import { supabase } from "../config/supabaseClient"
 import { createContext, useContext, useEffect, useState } from "react";
 
-const AuthContext = createContext({})
+const AuthContext = createContext({});
 
 export function useAuth() {
-  return useContext(AuthContext)
+  return useContext(AuthContext);
 }
 
-const register = ()=> supabase.auth.signInWithOAuth({provider:'google'})
+const register = ()=> supabase.auth.signInWithOAuth({provider:'google'});
 
+const signOut = () => supabase.auth.signOut();
 
 export function AuthProvider({children}){
   const [user,setUser] = useState(null);
-  const [auth,setAuth] = useState(false)
+  const [auth,setAuth] = useState(false);
   
   useEffect(()=>{
     const getUser = async () =>{
       const {data} = await supabase.auth.getUser();
       const { user: currentUser } = data;
-      setUser(currentUser ?? null)
+      setUser(currentUser ?? null);
       setAuth(currentUser ? true : false);
     }
     getUser();
@@ -33,13 +34,14 @@ export function AuthProvider({children}){
       }
     })
     return () => {
-      data.subscription.unsubscribe()
+      data.subscription.unsubscribe();
     }
   },[])
 
   return <AuthContext.Provider value={{
     auth,
     user,
+    signOut,
     register,
   }}>{children}</AuthContext.Provider>
 }
