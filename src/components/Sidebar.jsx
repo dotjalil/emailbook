@@ -16,7 +16,7 @@ const Sidebar = (props) => {
             <span className="text-sm">john@doe.com</span>
           </div>
         </div>
-        <button className="bg-main flex gap-1 text-xs px-2.5 py-2 text-dark-white rounded-md">
+        <button className="bg-main flex gap-1 text-xs px-2.5 py-2 text-white3 rounded-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -42,7 +42,7 @@ const Sidebar = (props) => {
             <span className="text-sm">john@doe.com</span>
           </div>
         </div>
-        <button className="bg-main flex gap-1 text-xs px-2.5 py-2 text-dark-white rounded-md">
+        <button className="bg-main flex gap-1 text-xs px-2.5 py-2 text-white3 rounded-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
